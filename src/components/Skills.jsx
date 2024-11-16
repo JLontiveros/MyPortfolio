@@ -48,16 +48,12 @@ const Skills = () => {
         </div>
         <br />
         <ul className="list-decimal px-4 font-Poppins sm:text-sm text-xs !leading-7">
-          <li>Lorem ipsum dolor sit, amet consectetur adipisicing.</li>
-          <li>Lorem ipsum dolor sit, ame.</li>
-          <li>Lorem ipsum dolor sit, amet consectetur</li>
-          <li>
-            Lorem ipsum dolor sit, amet dolor sit, amet consectetur adipisicing.
-          </li>
-          <li>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad est
-            beatae quos rem.
-          </li>
+        <li>Experienced in building responsive and interactive user interfaces using React.js.</li>
+        <li>Proficient in designing and planning workflows and project diagrams with Draw.io.</li>
+        <li>Skilled in managing and querying relational databases with MySQL.</li>
+        <li>Expertise in designing visually engaging websites with Webflow.</li>
+        <li>Hands-on experience in developing IoT (Internet of Things) applications.</li>
+        <li>Knowledgeable in using Supabase for full-stack development and backend services.</li>
         </ul>
         <br />
         <div className="flex justify-end">

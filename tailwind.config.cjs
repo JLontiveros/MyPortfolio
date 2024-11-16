@@ -14,11 +14,11 @@ module.exports = {
     extend: {
       colors: {
         dark_primary: "#06223F",
-        bg_light_primary: "#F5F9FD",
+        bg_light_primary: "#FECDFCC",
         gray: "#B7C5D3",
       },
       backgroundImage: {
-        primaryLinear: "linear-gradient(180deg, #B6CCF5 0.48%, #D5E3F1 100%)",
+        primaryLinear: "linear-gradient(180deg, #ECDFCC 0.48%, #FCFAEE 100%)",
       },
       dropShadow: {
         primary: "-5px 35px 40px rgba(223, 229, 236, 0.9)",

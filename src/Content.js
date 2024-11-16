@@ -1,12 +1,12 @@
 // import images
 import Hero_person from "./assets/images/Hero/person.png";
 
-import figma from "./assets/images/Skills/figma.png";
-import sketch from "./assets/images/Skills/sketch.png";
-import ps from "./assets/images/Skills/ps.png";
-import reactjs from "./assets/images/Skills/react.png";
-import nodejs from "./assets/images/Skills/node.png";
-import python from "./assets/images/Skills/python.png";
+import figma from "./assets/images/Skills/react.png";
+import sketch from "./assets/images/Skills/iot.jpg";
+import ps from "./assets/images/Skills/mysql.png";
+import reactjs from "./assets/images/Skills/webflow.png";
+import nodejs from "./assets/images/Skills/draw.png";
+import python from "./assets/images/Skills/supabase.png";
 
 import services_logo1 from "./assets/images/Services/logo1.png";
 import services_logo2 from "./assets/images/Services/logo2.png";
@@ -15,6 +15,7 @@ import services_logo3 from "./assets/images/Services/logo3.png";
 import project1 from "./assets/images/projects/img1.png";
 import project2 from "./assets/images/projects/img2.png";
 import project3 from "./assets/images/projects/img3.png";
+import project4 from "./assets/images/projects/img4.png";
 import person_project from "./assets/images/projects/person.png";
 
 import avatar1 from "./assets/images/Testimonials/avatar1.png";
@@ -24,11 +25,12 @@ import avatar4 from "./assets/images/Testimonials/avatar4.png";
 
 import Hireme_person from "./assets/images/Hireme/person.png";
 import Hireme_person2 from "./assets/images/Hireme/person2.png";
+import CV from "./assets/images/CV/Ontiveros_Jann_Louis_CV.png"; // Adjust the path to where your CV image is stored
 
 // import icons from react-icons
 import { GrMail } from "react-icons/gr";
 import { MdArrowForward, MdCall } from "react-icons/md";
-import { BsInstagram } from "react-icons/bs";
+import { BsLinkedin } from "react-icons/bs";
 import { TbSmartHome } from "react-icons/tb";
 import { BiUser } from "react-icons/bi";
 import { RiServiceLine, RiProjectorLine } from "react-icons/ri";
@@ -58,18 +60,18 @@ export const content = {
     },
   ],
   hero: {
-    title: "Web Developer",
-    firstName: "JOHN",
-    LastName: "ALEX",
+    title: "Aspiring IT Project Manager",
+    firstName: "JANN",
+    LastName: "LOUIS",
     btnText: "Hire Me",
     image: Hero_person,
     hero_content: [
       {
-        count: "8+",
-        text: "Years of Experinse in Web development",
+        count: "2nd runner up",
+        text: "KMC  Hackhathon Talent Matchmaking Challenge",
       },
       {
-        count: "20+",
+        count: "5+",
         text: "Projects Worked in my career",
       },
     ],
@@ -79,33 +81,33 @@ export const content = {
     subtitle: "MY TOP SKILLS",
     skills_content: [
       {
-        name: "Figma",
-        para: "Lorem ipsum text  dummy",
+        name: "React js",
+        para: "Full-Stack Development",
         logo: figma,
       },
       {
-        name: "Node js",
-        para: "Lorem ipsum text  dummy",
+        name: "Draw io",
+        para: "Project Management",
         logo: nodejs,
       },
       {
-        name: "Adobe Photoshop",
-        para: "Lorem ipsum text  dummy",
+        name: "mysql",
+        para: "Data Management",
         logo: ps,
       },
       {
-        name: "React js",
-        para: "Lorem ipsum text  dummy",
+        name: "webflow",
+        para: "Website Design",
         logo: reactjs,
       },
       {
-        name: "Sketch",
-        para: "Lorem ipsum text  dummy",
+        name: "IOT",
+        para: "IoT (Internet of Things)",
         logo: sketch,
       },
       {
-        name: "Python",
-        para: "Lorem ipsum text  dummy",
+        name: "supabase",
+        para: "Full-Stack Development",
         logo: python,
       },
     ],
@@ -113,21 +115,21 @@ export const content = {
   },
   services: {
     title: "Services",
-    subtitle: "WHAT I OFFER",
+    subtitle: "WHAT I CAN OFFER",
     service_content: [
       {
-        title: "Web Development",
-        para: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document elying on mean",
+        title: "End-to-End Web Application Development",
+        para: "Build and manage web applications from ideation to deployment using your Fullstack Development skills and tools like React, MySQL, HTML, CSS, and JavaScript.",
         logo: services_logo1,
       },
       {
-        title: "ui / ux DESIGNING",
-        para: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document elying on mean",
+        title: "Technical Project Management and Workflow Automation",
+        para: "Provide project management services tailored to tech projects, using tools like flowchart creation and Webflow for streamlining workflows.",
         logo: services_logo2,
       },
       {
-        title: "PhotoShop Editing",
-        para: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document elying on mean",
+        title: "IoT Solutions Design and Deployment",
+        para: "Leverage IoT expertise to design, develop, and deploy connected systems that use C++ and integrate with web interfaces or cloud solutions.",
         logo: services_logo3,
       },
     ],
@@ -138,75 +140,77 @@ export const content = {
     image: person_project,
     project_content: [
       {
-        title: "Gym Website",
+        title: "VolcanoWatch",
         image: project1,
+        description: "A mobile application that will detect the whereabouts of every evacuee."
       },
       {
-        title: "Social Media web",
+        title: "Resume Builder",
         image: project2,
+        description: "An interactive tool that helps users create professional resumes for KMC."
       },
       {
-        title: "Creative Website",
+        title: "E-commerce",
         image: project3,
+        description: "An e-commerce platform with a user-friendly interface, shopping cart, and secure payment gateway integration."
+      },
+      {
+        title: "LMS",
+        image: project4,
+        description: "The platform enables educators to upload engaging history courses, track student progress, and facilitate a more immersive learning experience with 3D content, enhancing students' understanding of historical events and concepts."
       },
     ],
   },
   Testimonials: {
-    title: "Testimonials",
-    subtitle: "MY CLIENT REVIEWS",
+    title: "Experience",
+    subtitle: "Competitive Student",
     testimonials_content: [
       {
         review:
-          "“In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstra”",
+          "“Manage my team to secure a spot in this competition”",
         img: avatar1,
-        name: "JOHN DOE",
+        name: "KMC 2024 Talent Matchmaking Challenge held last 24-25 October 2024",
       },
       {
         review:
-          "“In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstra”",
+          "“Got recognized as one of the active student in my department”",
         img: avatar2,
-        name: "Tom Alex",
+        name: "College Life",
       },
       {
         review:
-          "“In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstra”",
+          "“Compete in Hack4Gov3 Regional Qualifying Round and secure top 8 spot out of 16”",
         img: avatar3,
-        name: "Johnny",
-      },
-      {
-        review:
-          "“In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstra”",
-        img: avatar4,
-        name: "ROBBIN",
+        name: "HACKFORGOV Regional Qualifying Round held last June 6, 2024",
       },
     ],
   },
   Hireme: {
     title: "Hire Me",
-    subtitle: "FOR YOUR PROJECTS",
+    subtitle: "As an Intern",
     image1: Hireme_person,
     image2: Hireme_person2,
-    para: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document elying on mean",
-    btnText: "Hire Me",
+    para: "Fuel your team's innovation with my fresh perspective, eager spirit, and ready-to-learn attitude – the intern who's ready to make an impact from day one",
+    btnText: "C.V",
+    cvFile: CV, // Add this line
   },
   Contact: {
     title: "Contect Me",
     subtitle: "GET IN TOUCH",
     social_media: [
       {
-        text: "codeaprogram@gmail.com",
+        text: "louis.ontiveros20@gmail.com",
         icon: GrMail,
-        link: "mailto:codeaprogram@gmail.com",
+        link: "mailto:louis.ontiveros20@gmail.com",
       },
       {
-        text: "+91 1234 56778",
+        text: "+63 945 720 3159",
         icon: MdCall,
-        link: "https://wa.me/1234567890",
       },
       {
-        text: "codeaprogram",
-        icon: BsInstagram,
-        link: "https://www.instagram.com/codeaprogram/",
+        text: "ontiverosjannlouis",
+        icon: BsLinkedin,
+        link: "https://www.linkedin.com/in/ontiverosjannlouis/",
       },
     ],
   },

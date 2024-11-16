@@ -1,7 +1,18 @@
+import React from 'react';
 import { content } from "../Content";
+import { HiOutlineDocumentText } from "react-icons/hi"; // Using HiOutlineDocumentText from react-icons
 
 const Hireme = () => {
   const { Hireme } = content;
+
+  const handleDownloadCV = () => {
+    const link = document.createElement('a');
+    link.href = Hireme.cvFile;
+    link.download = 'CV.png';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <section className="bg-bg_light_primary">
@@ -13,7 +24,7 @@ const Hireme = () => {
           {Hireme.subtitle}
         </h4>
         <br />
-        <div className="flex items-center md:flex-row flex-col-reverse ">
+        <div className="flex items-center md:flex-row flex-col-reverse md:justify-center">
           <img
             src={Hireme.image1}
             alt="..."
@@ -33,7 +44,11 @@ const Hireme = () => {
           >
             <p className="leading-7">{Hireme.para}</p>
             <br />
-            <button className="btn bg-dark_primary text-white">
+            <button
+              className="btn bg-dark_primary text-white flex items-center justify-center gap-2"
+              onClick={handleDownloadCV}
+            >
+              <HiOutlineDocumentText size={20} />
               {Hireme.btnText}
             </button>
           </div>

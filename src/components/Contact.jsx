@@ -1,4 +1,4 @@
-import { createElement, useRef } from "react";
+import { createElement, useRef, useState } from "react";
 import { content } from "../Content";
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
@@ -6,33 +6,37 @@ import toast, { Toaster } from "react-hot-toast";
 const Contact = () => {
   const { Contact } = content;
   const form = useRef();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Sending Email
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
-    emailjs
-      .sendForm(
-      'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY'
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          // Clear all input field values
-          form.current.reset();
-          // Success toast message
-          toast.success("Email send Successfully");
-        },
-        (error) => {
-          console.log(error.text);
-          toast.error(error.text);
-        }
+    try {
+      // Use Vite environment variables
+      const result = await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
+
+      if (result.text === 'OK') {
+        toast.success('Message sent successfully!');
+        form.current.reset();
+      }
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      toast.error('Failed to send message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <section className="bg-dark_primary text-white" id="contact">
-      <Toaster />
+      <Toaster position="top-center" />
       <div className="md:container px-5 py-14">
         <h2 className="title !text-white" data-aos="fade-down">
           {Contact.title}
@@ -41,6 +45,7 @@ const Contact = () => {
           {Contact.subtitle}
         </h4>
         <br />
+
         <div className="flex gap-10 md:flex-row flex-col">
           <form
             ref={form}
@@ -48,35 +53,35 @@ const Contact = () => {
             data-aos="fade-up"
             className="flex-1 flex flex-col gap-5"
           >
-            {/* Input Name as same as email js templates values */}
             <input
               type="text"
               name="from_name"
-              placeholder="Name"
+              placeholder="Your Name"
               required
-              className="border border-slate-600 p-3 rounded"
+              className="border border-slate-600 p-3 rounded bg-transparent"
             />
             <input
               type="email"
-              name="user_email"
+              name="reply_to"
               pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
-              placeholder="Email Id"
+              placeholder="Your Email"
               required
-              className="border border-slate-600 p-3 rounded"
+              className="border border-slate-600 p-3 rounded bg-transparent"
             />
             <textarea
               name="message"
-              placeholder="Message"
-              className="border border-slate-600 p-3 rounded h-44"
+              placeholder="Your Message"
+              className="border border-slate-600 p-3 rounded h-44 bg-transparent"
               required
             ></textarea>
             <button
-              className="btn self-start
-            bg-white text-dark_primary"
+              className="btn self-start bg-white text-dark_primary disabled:opacity-50"
+              disabled={isSubmitting}
             >
-              Submit
+              {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
           </form>
+
           <div className="flex-1 flex flex-col gap-5">
             {Contact.social_media.map((content, i) => (
               <div
@@ -86,7 +91,12 @@ const Contact = () => {
                 className="flex items-center gap-2"
               >
                 <h4 className="text-white">{createElement(content.icon)}</h4>
-                <a className="font-Poppins" href={content.link} target="_blank">
+                <a 
+                  className="font-Poppins hover:text-gray-300 transition-colors" 
+                  href={content.link} 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {content.text}
                 </a>
               </div>
